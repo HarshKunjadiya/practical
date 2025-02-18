@@ -17,24 +17,19 @@ export const addEmployee = async (req, res) => {
     });
     await employee.save();
 
-    return res
-      .status(200)
-      .json({ message: "Employee Created Successfully", response: employee });
+    return res.status(200).json({ message: "Employee Created Successfully", response: employee });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ message: "Internal Server Error!" });
+    return res.status(500).json({ message : "Internal Server Error!" });
   }
 };
 
 export const getAllEmployee = async (req, res) => {
   try {
-  
     console.log("user data ===", req.user);
-    
+
     const response = await Employee.find();
-    return res
-      .status(200)
-      .json({ message: "Employee data retrieved succesfully...", response });
+    return res.status(200).json({ message: "Employee data retrieved succesfully...", response });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Internal Server Error!" });
@@ -82,9 +77,7 @@ export const login = async (req, res) => {
       role: employee.role,
     });
 
-    return res
-      .status(200)
-      .json({ message: "Login Successfully.", token: accessToken });
+    return res.status(200).json({ message: "Login Successfully.", token: accessToken });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Internal Server Error!" });
@@ -104,9 +97,7 @@ export const updateEmployee = async (req, res) => {
     // employee.name = name;
     // await employee.save();
 
-    return res
-      .status(200)
-      .json({ message: "Data updated successsfully!", response: employee });
+    return res.status(200).json({ message: "Data updated successsfully!", response: employee });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Internal Server Error!" });

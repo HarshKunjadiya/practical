@@ -7,18 +7,19 @@ export function signJWT(payload) {
     return token;
 }
 
-export async function verifyToken(token){
-    console.log("in verify method");
+// export async function verifyToken(token){
+//     console.log("in verify method");
     
-     jwt.verify(token, secret, function(err, decoded) {
-        if(err) {
+//      jwt.verify(token, secret, function(err, decoded) {
+//         if(err) {
+//             return err;
+//         } 
+//         return decoded;
+//      })
 
-        } 
-     })
-
-     jwt.sign(payload, secret)
-    console.log("==========", decoded);
+//      jwt.sign(payload, secret)
+//     console.log("==========", decoded);
     
-    return decoded;
-}
+//     return decoded;
+// }
 

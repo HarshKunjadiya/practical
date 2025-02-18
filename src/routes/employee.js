@@ -6,13 +6,13 @@ const router = Router();
 
 router.post("/add", employeeController.addEmployee);
 
-router.get("/getAll",authenticate, employeeController.getAllEmployee);
+router.get("/getAll", employeeController.getAllEmployee);
 
 router.get("/get/:id", employeeController.getEmployeeById);
 
 router.post("/login", employeeController.login);
 
-router.patch("/update", employeeController.updateEmployee);
+router.patch("/update",authenticate, employeeController.updateEmployee);
 
 router.delete("/delete", employeeController.deleteEmployee);
 
